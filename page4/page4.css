@@ -6,6 +6,12 @@
     text-decoration: none;
 }
 
+.delete-txt {
+    font-family: 'Girloy Light';
+    font-size: 15px;
+    cursor: pointer;
+}
+
 button {
     width: 170px;
     height: 48px;

@@ -5,6 +5,11 @@
   font-family: "Gilroy Light";
   text-decoration: none;
 }
+.delete-txt {
+  font-family: 'Girloy Light';
+  font-size: 15px;
+  cursor: pointer;
+}
 
 h2 {
   font-size: 44px;

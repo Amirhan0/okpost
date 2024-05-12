@@ -12,7 +12,11 @@ h2 {
     margin-bottom: 40px;
 }
 
-
+.delete-txt {
+  font-family: 'Girloy Light';
+  font-size: 15px;
+  cursor: pointer;
+}
 
 
 button {
