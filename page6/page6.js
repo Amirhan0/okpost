@@ -11,8 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const userImage = document.querySelector(".auth .user");
     userImage.src = avatarStorage;
-    userImage.style.width = "58px";
-    userImage.style.width = "58px";
-    userImage.style.borderRadius = "50%";
+    userImage.style.width = "60px";
+    userImage.style.width = "50px";
+    userImage.style.borderRadius = "30px";
+
+    const deleteBtn = document.createElement("text");
+    deleteBtn.classList.add("delete-txt");
+    deleteBtn.textContent = "Выйти";
+
+    deleteBtn.addEventListener("click", () => {
+      localStorage.removeItem("Логин");
+      localStorage.removeItem("Аватарка (ссылка)");
+
+      location.reload();
+    });
+    const authDiv = document.querySelector(".auth");
+    authDiv.appendChild(deleteBtn);
   }
 });

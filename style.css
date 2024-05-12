@@ -225,11 +225,14 @@ h2 {
   transition: transform 0.5s ease;
   position: relative;
 }
+
 .big__kurtka img {
   width: 475px;
   height: 499px;
 }
-.slider__left, .slider__right {
+
+.slider__left,
+.slider__right {
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -237,7 +240,9 @@ h2 {
   transition: transform 0.5s ease;
   position: relative;
 }
-.slider__left img, .slider__right img {
+
+.slider__left img,
+.slider__right img {
   width: 120px;
   height: 120px;
 }
@@ -248,11 +253,13 @@ h2 {
   left: 0;
   transition: left 0.5s ease;
 }
+
 .big__kurtka .slide:not(:first-child) {
-  margin-left: 15px; 
+  margin-left: 15px;
 }
 
-.slider__button__right, .slider__button__left {
+.slider__button__right,
+.slider__button__left {
   cursor: pointer;
 }
 
@@ -1036,4 +1043,11 @@ footer {
 .auth a {
   text-decoration: none;
   color: black;
+}
+
+
+.delete-txt {
+  font-family: 'Girloy Light';
+  font-size: 15px;
+  cursor: pointer;
 }

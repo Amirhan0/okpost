@@ -71,10 +71,10 @@ registrationBtn.addEventListener("click", async (e) => {
     passwordInputOne,
     loginInput
   ) {
-    localStorage.setItem("phoneNumber", numberInput);
-    localStorage.setItem("email", emailInput);
-    localStorage.setItem("password", passwordInputOne);
-    localStorage.setItem("login", loginInput);
+    localStorage.setItem("Телефон", numberInput);
+    localStorage.setItem("E-mail", emailInput);
+    localStorage.setItem("Логин", loginInput);
+    localStorage.setItem("password", passwordInputOne); 
     window.location.href = "../login/login.html";
   }
   addLocalStorage(number, email, passwordOne, login);

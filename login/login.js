@@ -48,8 +48,8 @@ loginButton.addEventListener("click", async (e) => {
   }
 
   function addLocalStorage(numberInput, emailInput, passwordInputOne) {
-    localStorage.setItem("phoneNumber", numberInput);
-    localStorage.setItem("email", emailInput);
+    localStorage.setItem("Телефон", numberInput);
+    localStorage.setItem("E-mail", emailInput);
     localStorage.setItem("password", passwordInputOne);
     window.location.href = "../profile/profile.html";
   }
