@@ -41,11 +41,19 @@ loginButton.addEventListener("click", async (e) => {
       );
     }
 
-    window.location.href = "profile.html";
+    window.location.href = "../profile/profile.html";
   } catch (error) {
     console.error("Ошибка:", error.message);
     alert(error.message);
   }
+
+  function addLocalStorage(numberInput, emailInput, passwordInputOne) {
+    localStorage.setItem("phoneNumber", numberInput);
+    localStorage.setItem("email", emailInput);
+    localStorage.setItem("password", passwordInputOne);
+    window.location.href = "../profile/profile.html";
+  }
+  addLocalStorage(number, email, password);
 });
 
 function showError(input, message) {

@@ -65,13 +65,19 @@ registrationBtn.addEventListener("click", async (e) => {
     await sendDataToAPI(dataToSend);
   }
 
-  function addLocalStorage(numberInput, emailInput, passwordInputOne) {
+  function addLocalStorage(
+    numberInput,
+    emailInput,
+    passwordInputOne,
+    loginInput
+  ) {
     localStorage.setItem("phoneNumber", numberInput);
     localStorage.setItem("email", emailInput);
     localStorage.setItem("password", passwordInputOne);
-    window.location.href = "/login/login.html";
+    localStorage.setItem("login", loginInput);
+    window.location.href = "../login/login.html";
   }
-  addLocalStorage(number, email, passwordOne);
+  addLocalStorage(number, email, passwordOne, login);
 });
 
 async function sendDataToAPI(data) {
