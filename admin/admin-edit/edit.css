@@ -57,8 +57,56 @@ button {
     padding: 0px 150px;
 }
 
+.edit-pages-container {
+    background-color: azure;
+    width: 1500px;
+}
+
 .edit-names h1 {
     font-family: 'Gilroy ExtraBold';
     font-size: 26px;
     line-height: 36px;
+}
+
+
+.edit-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit p {
+    font-family: 'Gilroy ExtraBold';
+    font-size: 15px;
+    line-height: 35px;
+}
+
+.edit {
+    width: 300px;
+    height: 30px;
+}
+
+.edit-name p {
+    font-family: 'Gilroy Light';
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.edit-name {
+    margin-top: 10px;
+    width: 1290px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-edit {
+    display: flex;
+    align-items: center;
+}
+
+.edit-edit img {
+    margin-right: 10px;
+    cursor: pointer;
 }
