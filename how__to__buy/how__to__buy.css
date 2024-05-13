@@ -9,6 +9,7 @@
   font-family: 'Girloy Light';
   font-size: 15px;
   cursor: pointer;
+  margin: 0px 15px;
 }
 
 h2 {
@@ -136,6 +137,12 @@ header {
 
 
 
+.delete-txt {
+  font-family: 'Girloy Light';
+  font-size: 15px;
+  cursor: pointer;
+  margin: 0px 15px;
+}
 
 
 /* block 1 start--------------------------------------- */

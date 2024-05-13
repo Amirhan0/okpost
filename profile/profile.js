@@ -83,42 +83,32 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-const url = "https://3d97fdc2ac6a904f.mokky.dev/reg";
-changePasswordBtn.addEventListener("click", async () => {
-  const old = document.querySelector("#oldPassword");
-  const oldPassword = old.value;
-  const newpass = document.querySelector("#newPassword");
-  const newPassword = newpass;
-  const confirmpass = document.querySelector("#confirmPassword");
 
-  const confirmPassword = confirmpass.value;
+changePasswordBtn.addEventListener("click", () => {
+  const oldPassword = document.querySelector("#oldPassword").value;
+  const newPassword = document.querySelector("#newPassword").value;
+  const confirmPassword = document.querySelector("#confirmPassword").value;
 
   if (newPassword !== confirmPassword) {
-    showError(newpass, "Пароли должны совпадать");
-    showError(confirmpass, "Пароли должны совпадать");
+    showError(
+      document.querySelector("#newPassword"),
+      "Пароли должны совпадать"
+    );
+    showError(
+      document.querySelector("#confirmPassword"),
+      "Пароли должны совпадать"
+    );
+    return;
   } else {
-    hideError(newpass);
-    hideError(confirmpass);
+    hideError(document.querySelector("#newPassword"));
+    hideError(document.querySelector("#confirmPassword"));
   }
 
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ oldPassword, newPassword }),
-    });
+  localStorage.setItem("newPassword", newPassword);
+  localStorage.removeItem("password");
 
-    if (!response.ok) {
-      throw new Error("Ошибка при изменении пароля");
-    }
-    alert("Пароль успешно изменен!");
-    modal.style.display = "none";
-  } catch (error) {
-    console.error("Ошибка:", error);
-    alert("Произошла ошибка при изменении пароля" + error.message);
-  }
+  alert("Пароль успешно изменен!");
+  modal.style.display = "none";
 });
 
 function showError(input, message) {
@@ -129,6 +119,6 @@ function showError(input, message) {
 
 function hideError(input) {
   const errorLabel = input.nextElementSibling;
-  errorLabel.textContent = " ";
+  errorLabel.textContent = "";
   errorLabel.style.display = "none";
 }

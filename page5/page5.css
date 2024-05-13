@@ -5,10 +5,12 @@
     font-family: "Gilroy Light";
     text-decoration: none;
 }
+
 .delete-txt {
     font-family: 'Girloy Light';
     font-size: 15px;
     cursor: pointer;
+    margin: 0px 15px;
   }
 button {
     width: 170px;

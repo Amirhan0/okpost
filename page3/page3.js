@@ -1,7 +1,6 @@
 document.querySelector(".logo__text").addEventListener("click", () => {
   window.location.href = "../index.html";
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const avatarStorage = localStorage.getItem("Аватарка (ссылка)");
   const nameStorage = localStorage.getItem("Логин");
@@ -9,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nameStorage && avatarStorage) {
     const authLink = document.querySelector(".auth a");
     authLink.textContent = nameStorage;
+    authLink.href = '../okpost/profile/profile.html'
 
     const userImage = document.querySelector(".auth .user");
     userImage.src = avatarStorage;

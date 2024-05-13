@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nameStorage && avatarStorage) {
     const authLink = document.querySelector(".auth a");
     authLink.textContent = nameStorage;
+    authLink.href = "../okpost/profile/profile.html";
 
     const userImage = document.querySelector(".auth .user");
     userImage.src = avatarStorage;
