@@ -12,15 +12,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function renderUsers(usersData) {
-  const usersContainer = document.querySelector(
-    ".people-information"
-  );
+  const usersContainer = document.querySelector(".people-information");
 
   usersData.forEach((user) => {
-    const usersElement = document.createElement("div");
-    usersElement.classList.add("people-information-container");
+    const userElement = document.createElement("div");
+    userElement.classList.add("people-information-container");
 
-    usersElement.innerHTML = `
+    userElement.innerHTML = `
         <div class="information">
         <p>${user.id}</p>
       </div>
@@ -48,11 +46,30 @@ function renderUsers(usersData) {
       <div class="use-use">
         <img src="../admin-users/usersimg/Handbag.svg" alt="" />
         <img src="../admin-users/usersimg/PencilLine.svg" alt="" />
-        <img src="../admin-users/usersimg/Trash.svg" alt="" />
+        <img class='delete-icon' src="../admin-users/usersimg/Trash.svg" alt="" />
         <img src="../admin-users/usersimg/EnvelopeSimple.svg" alt="" />
       </div>
+    `;
 
-        `;
-    usersContainer.appendChild(usersElement);
+    const deleteIcon = userElement.querySelector(".delete-icon");
+    deleteIcon.addEventListener("click", async () => {
+      try {
+        const response = await fetch(
+          `https://3d97fdc2ac6a904f.mokky.dev/log/${user.id}`,
+          {
+            method: "DELETE",
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Ошибка при удалении пользователя");
+        }
+        userElement.remove(); 
+      } catch (error) {
+        console.error("Ошибка:", error);
+        alert("Произошла ошибка при удалении пользователя");
+      }
+    });
+
+    usersContainer.appendChild(userElement);
   });
 }
