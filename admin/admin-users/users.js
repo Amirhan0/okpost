@@ -1,14 +1,36 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  let usersData; // Переменная доступна обоим обработчикам
+
   try {
     const response = await fetch("https://3d97fdc2ac6a904f.mokky.dev/log");
     if (!response.ok) {
       throw new Error("Ошибка");
     }
-    const usersData = await response.json();
+    usersData = await response.json();
     renderUsers(usersData);
   } catch (error) {
     alert("Ошибка при загрузке пользователей");
   }
+
+  const searchInput = document.querySelector(
+    'input[type="text"][placeholder="Пользователь"]'
+  );
+  const showButton = document.querySelector("#search");
+  showButton.addEventListener("click", async () => {
+    const searchQuery = searchInput.value.toLowerCase();
+    const filteredUsers = usersData.filter((user) => {
+      return (
+        user.login.toLowerCase().includes(searchQuery) ||
+        user.email.toLowerCase().includes(searchQuery) ||
+        user.mainName.toLowerCase().includes(searchQuery) ||
+        String(user.id).includes(searchQuery)
+      );
+    });
+
+    const usersContainer = document.querySelector(".people-information");
+    usersContainer.innerHTML = "";
+    renderUsers(filteredUsers);
+  });
 });
 
 function renderUsers(usersData) {
@@ -63,7 +85,7 @@ function renderUsers(usersData) {
         if (!response.ok) {
           throw new Error("Ошибка при удалении пользователя");
         }
-        userElement.remove(); 
+        userElement.remove();
       } catch (error) {
         console.error("Ошибка:", error);
         alert("Произошла ошибка при удалении пользователя");
