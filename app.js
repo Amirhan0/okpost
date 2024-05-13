@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nameStorage && avatarStorage) {
     const authLink = document.querySelector(".auth a");
     authLink.textContent = nameStorage;
-    authLink.href = '../okpost/profile/profile.html'
+    authLink.href = "../okpost/profile/profile.html";
 
     const userImage = document.querySelector(".auth .user");
     userImage.src = avatarStorage;
@@ -113,5 +113,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     const authDiv = document.querySelector(".auth");
     authDiv.appendChild(deleteBtn);
+  }
+});
+
+
+const modal = document.getElementById("modal");
+const modalBtn = document.querySelector(".contact");
+const closeBtn = document.getElementById("close");
+
+
+modalBtn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });
